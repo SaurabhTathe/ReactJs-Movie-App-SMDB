@@ -4,23 +4,15 @@ import Cards from "../components/Cards.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../ReduxStore/dataSlice.js";
 import Footer from "../components/Footer.jsx";
-////////////////////////////////////////////////////////
+
 const ExplorePage = () => {
   const param = useParams();
 
   const {mediaList,page,  status } = useSelector((state) => state.data);
   const dispatch = useDispatch();
- // console.log(mediaList)
   
   useEffect(() => {
     const controller = new AbortController();
-
-    // dispatch(
-    //   fetchData(
-    //     //`https://api.themoviedb.org/3/trending/movie/week?api_key=${key}&language=en-US`
-    //     `/trending/${param.explore}/week`
-    //   )
-    // );
     dispatch(fetchData({ endPointUrl: `/trending/${param.explore}/week`, page, signal: controller.signal, }));
 
     return () => {

@@ -5,7 +5,6 @@ const MovieRecommendation = () => {
   const watchlist = useSelector((state) => state.favorite.watchlist);
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(false);
-
   const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
   useEffect(() => {

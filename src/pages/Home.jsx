@@ -8,14 +8,10 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // dispatch(
-    //   fetchData(
-    //     //`https://api.themoviedb.org/3/trending/movie/week?api_key=${key}&language=en-US`
-    //     `/trending/movie/week`
-    //   )
-    // );
      dispatch(fetchData({ endPointUrl: `/trending/movie/week`, page }));
-  }, []);
+  }, [dispatch]);
+
+
   return (
     <>
      <Banner data={mediaList}/>
