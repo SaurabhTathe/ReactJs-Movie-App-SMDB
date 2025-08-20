@@ -12,7 +12,6 @@ const SearchPage = () => {
 
   // Extract query from URL (?q=...)
   const query = new URLSearchParams(location.search).get("q") || "";
-  
   // Keep input controlled with query
   const [searchInput, setSearchInput] = useState("");
   const [dataList, setDataList] = useState([]);
